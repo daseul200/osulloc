@@ -1,0 +1,1260 @@
+/* 외부 폰트 연결 - 눈누 사이트의 노토 산스체 */
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@font-face {
+    font-family: '국립박물관문화재단클래식B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none; color: #333; display: block; font-family: 'Noto Sans KR', sans-serif;}
+img{width: 100%;}
+.wrqp{width: 100%; overflow: hidden;}
+header, section, footer{ width: 100%; float: left;}
+header, section, footer, div{box-sizing: border-box; }
+/* 가로 스크롤바 없앰 */
+/* html 없애면 이중 세로스크롤 없어짐 */
+/* 전체가 노토산스(a태그에도 써야함) */
+body{overflow-x: hidden; position: relative;
+    font-family: 'Noto Sans KR', sans-serif;
+} 
+body.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+/* 현재 홈페이지의 모든 h1태그의 스타일 지정 */
+h1{
+    font-size: 40px;
+    text-align: center;
+    font-weight: normal;
+}
+header{
+    height: 150px;
+    background-color: white;
+    position: relative;
+    z-index: 100;
+}
+header > div{
+    width: 1760px;
+    margin:0 auto;
+}
+header .top_menu{
+    height: 80px;
+}
+header .top_menu .top_menu_list{
+    float: right;
+    margin-top: 15px;
+}
+header .top_menu .top_menu_list > div{
+    float: left;
+    margin: 0 10px;
+}
+header .top_menu .top_menu_list .member ul li{
+    float: left;
+    /* margin-right: 20px; */
+}
+header .top_menu .top_menu_list .member ul li a{
+    padding: 10px;
+    font-size: 14px;
+}
+header .top_menu .top_menu_list .mall a{
+    padding: 7px 20px;
+    border-radius: 30px;
+    background-color: #86a38b;
+    color: #fff;
+    font-size: 14px;
+}
+header .top_menu .top_menu_list .total_menu a{
+    padding: 7px 37px;
+    border-radius: 30px;
+    background-color: #808180;
+    color: #fff;
+    font-size: 14px;
+}
+header .menu_area{
+    height: 70px;
+    position: relative;
+    z-index: 30;
+}
+header .menu_area .menu1{
+    float: left;
+}
+header .menu_area .menu2{
+    float: right;
+}
+/* 로고는 브라우저의 정 가운데로 배치해야 함, 양쪽에 길이가 다른 div가 있으므로 position:absolute; 로 배치함 */
+header .menu_area .logo{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    width: 180px;
+    bottom:35px
+}
+header .menu_area nav > ul > li{
+    float: left;
+}
+header .menu_area nav > ul > li > a{
+    font-size: 15px;
+    font-weight: bold;
+    padding-right: 72px;
+    
+}
+header .menu_area nav > ul > li:hover > a{
+    color: #81801f;
+}
+/* 서브메뉴 */
+header .menu_area nav .sub{
+    padding-top: 30px;
+    display: none;
+}
+header .menu_area nav .sub li a{
+    padding: 15px 0 0;
+    font-size: 14px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -1px;
+}
+header .menu_area nav .sub li a:after{
+    content: "";
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e0df7d;
+    position: absolute;
+    transition: all 0.5s;
+}
+header .menu_area nav .sub li:hover a::after{
+    width: 100%;
+}
+/* 오른쪽영역의 nav, 검색영역, 메뉴영역을 가로로 나열 */
+header .menu_area nav,
+header .menu_area .search,
+header .menu_area .total_menu{
+    float: left;
+}
+header .menu_area .search,
+header .menu_area .total_menu{
+    width: 25px;
+    margin: 0 10px;
+}
+header .sub_bg{
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top:130px;
+    width: 100%;
+    height: 230px;
+    box-shadow: 0 2px 2px #ddd;
+    display: none;
+    z-index: 20;
+}
+/* 검색영역 */
+header .search_area{
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: 150px;
+    background-color: #fff;
+    display: none;
+}
+header .search_area .search_in{
+    width: 650px;
+    height: 60px;
+    margin:80px auto;
+    border-bottom: 2px solid #111;
+}
+header .search_area .search_in input{
+    width: 600px;
+    float: left;
+    font-size: 20px;
+    padding: 15px 0;
+    display: block;   /*인라인요소를 블록요소로*/
+    border: none;
+}
+header .search_area a{
+    width: 40px;
+    margin-top: 10px;
+    float: right;
+}
+/* input 입력창을 마우스로 클릭해서 포커스가 input에 있을 때 테두리 없앰 */
+/* button, input 등에 사용함, 교제에없음 */
+header .search_area input:focus{
+    outline: none;
+}
+/* 검색영역 안의 닫기 버튼 */
+header .search_area > a{
+    margin:0 auto;
+    float: none;
+    width: 22px;
+}
+/* news작성할때 뒤로 겹침때문에 씀*/
+.visual{
+    /* calc(): 계상기능(이것 외엔 css엔 계산기능이 없음), 100vh: 브라우저의 높이(장치를 인식) */
+    height: calc(100vh - 280px);
+}
+/* 본문 비주얼 */
+section.visual .swiper{
+    /* 축소했을때 옆 비주얼 안보임 */
+    width: 90%;
+    margin:0 auto;
+    margin-top: 30px;
+}
+/* 슬라이드의 버튼 이미지 넣기 */
+/* 버튼 보이기 */
+/* 버튼앞에 부모 없앰->모든 스와이퍼에 적용 */
+.swiper{
+    /* overflow:hidden 해제 */
+    overflow: visible;
+}
+.swiper-button-next{
+    right: -40px;
+}
+.swiper-button-prev{
+    left: -40px;
+}
+.swiper-button-next:after{
+    content: url('../img/right.png');
+}
+.swiper-button-prev:after{
+    content: url('../img/left.png');
+}
+.swiper-horizontal > .swiper-scrollbar{
+    bottom: -40px;
+}
+
+/* 슬라이드 비주얼 배치 */
+section.visual .swiper-slide{
+    width: 100%;
+    height: 660px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+section.visual .s1 {
+    background-image: url(../img/visual\ back1.png);
+}
+section.visual .s2{
+    background-image: url(../img/visual\ back2.png);
+}
+section.visual .s3{
+    background-image: url(../img/visual\ back3.png);
+}
+section.visual .s4{
+    background-image: url(../img/visual\ back4.png);
+}
+section.visual .s1 a{
+    text-align: center;
+    color: #fff;
+    line-height: 70px;
+}
+section.visual .s1 p{
+    margin-top: 150px;
+    font-size: 30px;
+    font-family: '국립박물관문화재단클래식B';
+}
+section.visual .s1 h1{
+    font-size: 45px;
+    font-family: '국립박물관문화재단클래식B';
+    font-weight: bold;
+}
+section.visual .s1 span{
+    font-size: 26px;
+    font-family: '국립박물관문화재단클래식B';
+}
+section.visual .s1 .jBtn{
+    font-size: 16px;
+    border: 2px solid #fff;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    margin: 20px auto;
+    line-height: 30px;
+    cursor: pointer;
+}
+section.visual .s2 > div{
+    float: left;
+    margin-top: 280px;
+    margin-left: 250px;
+}
+section.visual .s2 .left{
+    font-weight: bold;
+}
+section.visual .s2 .left p{
+    font-size: 25px;
+    color: #4a6e40;
+}
+section.visual .s2 .left h1{
+    font-size: 40px;
+    color: #415218;
+}
+section.visual .s2 .right{
+    margin-left: 670px;
+}
+section.visual .s2 .right .jBtn{
+    font-size: 16px;
+    border: 2px solid #fff;
+    color: #fff;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+section.visual .s2 .right h1{
+    font-size: 40px;
+    color: #27431e;
+}
+section.visual .s3 a div {
+    float:right;
+    text-align: center;
+    width:58%;
+    margin-top:250px;
+}
+section.visual .s3 h1{
+    font-size: 50px;
+    color: #df4f4f;
+}
+section.visual .s3 p{
+    font-size: 26px;
+    color: #d38787;
+    margin:0 auto;
+    margin-top: 30px;
+    border-top: 1px solid #d38787;
+    border-bottom: 1px solid #d38787 ;
+    width: 400px;
+    padding: 10px ;
+}
+section.visual .s3 .jBtn{
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    color: #fff;
+    border: 2px solid #fff;
+    cursor: pointer;
+    background-color: transparent;
+    line-height:30px;
+    margin-top: 30px;
+}
+
+section.visual .s4 a{
+    text-align: right;
+    margin-right: 110px;
+    color: #fff;
+    margin-top: 170px;
+}
+section.visual .s4 span{
+    font-size: 24px;
+}
+section.visual .s4 h1{
+    font-size: 35px;
+    color: #ff7b05;
+    padding: 40px 0;
+    text-align: right;
+    font-weight: bold;
+}
+section.visual .s4 p{
+    font-size: 17px;
+    line-height: 30px;
+}
+section.visual .s4 .jBtn{
+    font-size: 16px;
+    border: 2px solid #fff;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 30px;
+}
+/* tab */
+.tab{height: 100vh;}
+/* tab */
+.tab .tab_container{
+    width: 1760px;
+    height: 810px;
+    margin: 0 auto;
+    margin-top: 80px;
+    background-color: #edf2ec;
+    padding-top: 90px;
+}
+
+.tab .tab_container h1{
+    color: #1e301b;
+    font-family: '국립박물관문화재단클래식B';
+}
+.tab .tab_container .tab_in{
+    margin-top: 60px;
+}
+
+.tab .tab_container .tab_con {
+    width: 100%;
+    float:left;
+    position: relative;
+    margin-left: 300px;
+    margin-top: 80px;
+}
+/* .tab .tab_container .tab_in .tab_img{
+    width: 100%;
+    background-color: #efefef;
+    position: relative;
+    overflow: hidden;
+    float: left;
+} */
+.tab .tab_container .tab_in .tab_img{
+    overflow: hidden;
+}
+.tab .tab_container .tab_in .tab_des{
+    width: 30%;
+    background-color: #efefef;
+    /* position: relative; */
+    margin-top: 70px;
+    text-align: right;
+    margin-left: 30px;
+    /* position: absolute;
+    top: -700px;        */ 
+}
+.tab .tab_container .tab_in .tab_con .tab_list{
+    display: none;
+}
+.tab .tab_container .tab_in .tab_con .tab_list:first-child{
+    display: block;
+}
+.tab .tab_container .tab_in .tab_des h3{
+    font-size: 24px;
+    font-weight: 500;
+    padding: 10px;
+    color: #1e301b;
+}
+.tab .tab_container .tab_in .tab_des p{
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-right: 10px;
+    color: #7e7f7e;
+}
+.tab .tab_container .tab_in .tab_btn{
+    margin-left: 240px;
+}
+.tab .tab_container .tab_in .tab_btn ul li{
+    float: left;
+    margin: 0 10px;
+}
+.tab .tab_container .tab_in .tab_btn ul li a{
+    font-size: 15px;
+    margin-left: 50px;
+}
+.tab .tab_container .tab_in .tab_btn ul li a.active{
+    color: #1b311d;
+    font-size: 18px;
+    font-weight: bold;
+}
+.tab .tab_container .tab_in .tab_con .tab_list{
+    width: 100%;
+    position: absolute;
+}
+.tab .tab_container .tab_in .tab_con .tab_list div{
+    float: left;
+}
+/* collection */
+.collection{
+    margin-top: 80px;
+    height: calc(100vh + 100px);
+}
+/* .collection .tab_slide{
+    margin-top: 22px;
+} */
+.collection > h1{
+    color: #1e301b;
+    font-family: '국립박물관문화재단클래식B';
+    background-color: #eff6df;
+    height: 130px;
+    line-height: 130px;
+}
+.collection .tab_slide .tab_title{
+    width: 226px;
+    margin:0 auto;
+}
+.collection .tab_slide .tab_title a {
+    font-size: 20px;
+    padding: 10px;
+    float: left;
+    color: #7d817c;
+}
+.collection .tab_slide .tab_title a:after{
+    content: "|";
+    float: right;
+    margin-left: 20px;
+    color: #7d817c;
+}
+.collection .tab_slide .tab_title a:last-child:after{
+    content: "";
+}
+.collection .tab_slide .tab_title a.active{
+    color: #2c6024;
+}
+.collection .tab_slide .tab_slide_con{
+    width: 100%;
+    float: left;
+    margin-top: 30px;
+    position: relative;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list{
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+/* 슬라이드바 보이기 */
+.collection .tab_slide .tab_slide_con .tab_slide_list.active{
+    opacity: 1;
+    visibility: visible;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper{
+    width: 1100px;
+    height: 540px;
+    margin:0 auto;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .swiper_slide{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 70px;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .new1{
+    background-image: url(../img/slide1.png);
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .new2{
+    background-image: url(../img/slide2.png);
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .new3{
+    background-image: url(../img/slide3.png);
+}
+
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .best1{
+    background-image: url(../img/slide4.png);
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .best2{
+    background-image: url(../img/slide5.png);
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .best3{
+    background-image: url(../img/slide6.png);
+}
+/* swiper 스크롤바 색상 변경 */
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .swiper-scrollbar-drag{
+    background-color: #1e301b;
+}
+
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .swiper-slide{
+    text-align: right;
+    padding-right: 100px;
+    padding: 120px;
+}
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .swiper-slide img{
+    width: 100px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 460px;
+}
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .swiper-slide h2{
+    font-size: 35px;
+    font-weight: 500;
+}
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .swiper-slide h4{
+    font-size: 20px;
+    color: #767770;
+    line-height: 50px;
+    margin-top: 20px;
+}
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .swiper-slide a{
+    color: #fff;
+    font-size: 14px;
+    border: 2px solid #fff;
+    width: 70px;
+    height: 20px;
+    padding: 3px 0;
+    text-align: center;
+    float: right;
+    margin-top: 5px;
+    position: relative;
+}
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .swiper-slide span{
+    display: block;
+    position: absolute;
+    background-color: #3e379f;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s;
+}
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .swiper-slide i{
+    display: block;
+    position: absolute;
+    font-style: normal;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    line-height: 30px;
+}
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .swiper-slide a:hover span{
+    height: 100%;
+}
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .swiper-slide p{
+    color: #3d3d3d;
+    font-size: 16px;
+    margin-top: 55px;
+}
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .new1{
+    color: #def537;
+}
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .new2{
+    color: #737d17;
+}
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .new3{
+    color: #b1caf8;
+}
+.collection .tab_slide .tab_slide_con .t1 .mySwiper2 .swiper-wrapper .new3 img{
+    margin-left: 480px;
+}
+.collection .tab_slide .tab_slide_con .t2 .mySwiper3 .swiper-wrapper .swiper-slide{
+    padding-top: 120px;
+    padding-left: 120px;
+}
+.collection .tab_slide .tab_slide_con .t2 .mySwiper3 .swiper-wrapper .swiper-slide h2{
+    font-size: 35px;
+    font-weight: 500;
+    float: left;
+}
+.collection .tab_slide .tab_slide_con .t2 .mySwiper3 .swiper-wrapper .swiper-slide img{
+    width: 100px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.collection .tab_slide .tab_slide_con .t2 .mySwiper3 .swiper-wrapper .swiper-slide h4{
+    font-size: 20px;
+    color: #767770;
+    margin-top: 50px;
+    left: 0;
+    line-height: 50px;
+}
+.collection .tab_slide .tab_slide_con .t2 .mySwiper3 .swiper-wrapper .swiper-slide a{
+    color: #fff;
+    font-size: 14px;
+    border: 2px solid #fff;
+    width: 70px;
+    height: 20px;
+    padding: 3px 0;
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+}
+.collection .tab_slide .tab_slide_con .t2 .mySwiper3 .swiper-wrapper .swiper-slide span{
+    width: 100%;
+    background-color: #3e379f;
+    position: absolute;
+    display: block;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s;
+}
+.collection .tab_slide .tab_slide_con .t2 .mySwiper3 .swiper-wrapper .swiper-slide i{
+    display: block;
+    position: absolute;
+    font-style: normal;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    line-height: 30px;
+}
+.collection .tab_slide .tab_slide_con .t2 .mySwiper3 .swiper-wrapper .swiper-slide a:hover span{
+    height: 100%;
+}
+.collection .tab_slide .tab_slide_con .t2 .mySwiper3 .swiper-wrapper .swiper-slide p{
+    color: #3d3d3d;
+    font-size: 16px;
+    margin-top: 30px;
+}
+.collection .tab_slide .tab_slide_con .t2 .mySwiper3 .swiper-wrapper .best1 h2{
+    color: #554b14;
+}
+.collection .tab_slide .tab_slide_con .t2 .mySwiper3 .swiper-wrapper .best2 h2{
+    color: #3e379f;
+}
+.collection .tab_slide .tab_slide_con .t2 .mySwiper3 .swiper-wrapper .best3 h2{
+    color: #9f377b;
+}
+/* 탭메뉴 안의 swiper slide안의 제목, 글자 애니메이션 */
+/* .collection .tab_slide .tab_slide_con .tab_slide_list{
+    opacity: 0;
+    margin-top: 100px;
+    transition: all 0.5s;
+    transition-delay: 0.5s;
+} */
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .swiper-wrapper img{
+    opacity: 0;
+    margin-top: 100px;
+    transition: all 0.7s;
+    transition-delay: 0.3s;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .swiper-slide h2{
+    opacity: 0;
+    margin-top: 100px;
+    transition: all 0.7s;
+    transition-delay: 0.3s;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .swiper-slide h4{
+    opacity: 0;
+    margin-top: 100px;
+    transition: all 0.7s;
+    transition-delay: 0.3s;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .swiper-slide a{
+    opacity: 0;
+    margin-top: 100px;
+    transition: all 0.7s;
+    transition-delay: 0.4s;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .swiper-slide p{
+    opacity: 0;
+    margin-top: 150px;
+    transition:all 0.7s;
+    transition-delay: 0.5s;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .swiper-slide-active img{
+    margin-top: 0;
+    opacity: 1;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .swiper-slide-active h2{
+    margin-top: 0;
+    opacity: 1;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .swiper-slide-active h4{
+    margin-top: 0;
+    opacity: 1;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .swiper-slide-active a{
+    margin-top: 0;
+    opacity: 1;
+}
+.collection .tab_slide .tab_slide_con .tab_slide_list .swiper .swiper-slide-active p{
+    margin-top: 50px;
+    opacity: 1;
+}
+/* banner(이벤트) */
+.banner{
+    height: 100vh;
+    background-color: #f4f7fa;
+}
+.banner .banner_in{
+    width: 1440px;
+    margin:0 auto;
+    margin-top: 80px;
+}
+.banner .banner_in > h1{
+    color: #1e301b;
+    font-family: '국립박물관문화재단클래식B';
+}
+.banner .banner_in .banner_box{
+    width: 100%;
+    float: left;
+    margin-top: 100px;
+}
+.banner .banner_in .banner_box > div{
+    float: left;
+}
+.banner .banner_in .banner_box .banner_title{
+    display: flex;
+    text-align: left;
+    /* flexible 기능 중 내용을 부모객체의 세로 가운데로 정렬 */
+    align-items: center;
+    font-size: 20px;
+    line-height: 34px;
+    color: #464646;
+    height: 555px;
+    width: 320px;
+}
+.banner .banner_in .banner_box .banner_img{
+    width: 555px;
+    height: 555px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 100px;
+    margin-bottom: 80px;
+}
+.banner .banner_in .banner_box .banner_img ul{
+    position: absolute;
+    width: 10000px;
+    left: 0;
+}
+.banner .banner_in .banner_box .banner_img ul li{
+    width: 555px;
+    height: 555px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 60px;
+    box-sizing: border-box;
+    line-height: 50px;
+}
+.banner .banner_in .banner_box .banner_img ul .event1{
+    background-image: url(../img/news1.png);
+}
+.banner .banner_in .banner_box .banner_img ul .event1 h1{
+    font-size: 36px;
+    color: #fff;
+}
+.banner .banner_in .banner_box .banner_img ul .event1 p{
+    font-size: 20px;
+    line-height: normal;
+    margin-top: 15px;
+    color: #bcda44;
+}
+.banner .banner_in .banner_box .banner_img ul .event2{
+    background-image: url(../img/news2.png);
+}
+.banner .banner_in .banner_box .banner_img ul .event2 span{
+    color: #fff;
+    font-size: 20px;
+}
+.banner .banner_in .banner_box .banner_img ul .event2 h1{
+    color: #161210;
+    font-weight: bold;
+    font-size: 50px;
+}
+.banner .banner_in .banner_box .banner_img ul .event2 p{
+    color: #906161;
+    line-height: normal;
+    font-size: 20px;
+    margin-top: 25px;
+}
+.banner .banner_in .banner_box .banner_img ul .event2 button{
+    color: #d9609c;
+    border-radius: 30px;
+    border: none;
+    background-color: #ffe6ef;
+    padding: 3px 15px;
+    font-size: 20px;
+    margin-top: 30px;
+}
+.banner .banner_in .banner_box .banner_img ul .event3{
+    background-image: url(../img/news3.png);
+}
+.banner .banner_in .banner_box .banner_img ul .event3 h1{
+    color: #182714;
+    font-size: 40px;
+    font-weight: bold;
+}
+.banner .banner_in .banner_box .banner_img ul .event3 p{
+    font-size: 26px;
+    color: #111;
+}
+.banner .banner_in .banner_box .banner_btn{
+    display: flex;
+    flex-flow: column nowrap;
+    height: 555px;
+    align-items: left;
+}
+.banner .banner_in .banner_box .banner_btn a{
+    padding: 50px 0;
+    font-size: 16px;
+    color: #7e7f7e;
+    line-height: 24px;
+    border-bottom: 1px solid #ddd;
+    /* 글자 가로길이 */
+    /* letter-spacing: -1px; */
+}
+.banner .banner_in .banner_box .banner_btn a span{
+    margin-bottom: 20px;
+    display: block;
+    font-weight: bold;
+}
+.banner .banner_in .banner_box .banner_btn a.active{
+    color: #1d321f;
+}
+/* sns */
+.sns .sns_in{
+    width: 1110px;
+    margin:0 auto;
+    margin-top: 80px;
+}
+.sns .sns_in h1{
+    font-family: '국립박물관문화재단클래식B';
+    color: #1c2918;
+}
+.sns .sns_in .sns_list{
+    margin-top: 80px;
+}
+.sns .sns_in .sns_list ul{
+    width: 100%;
+    display: grid;
+    /* 아이템 사이의 간격 */
+    gap: 40px;
+    grid-template-columns: auto auto auto auto;
+}
+.sns .sns_in .sns_list ul li{
+    overflow: hidden;
+}
+.sns .sns_in .sns_list ul li .sns_img{
+    transform: scale(1,1);
+    transition: all 0.5s;
+}
+.sns .sns_in .sns_list ul li:hover .sns_img{
+    transform: scale(1.1,1.1);
+}
+/* map */
+.map{
+   margin: 80px 0;
+}
+.map .a_box{
+    width: 600px;
+    margin: 80px 120px;
+}
+.map .a_box ul > li{
+    float: left;
+    margin-right: 15px;
+    border-right: 3px solid #ddd;
+    padding: 0 40px;
+}
+.map .a_box ul .box3{
+    border: none;
+}
+.map .a_box ul li span img{
+    width: 65px;
+    height: 65px;
+}
+.map .a_box ul li p{
+    font-size: 14px;
+    color: #8f8f8f;
+    margin: 5px 0;
+}
+/* app */
+.app{
+    width: 100%;
+    height: 300px;
+}
+.app div{
+    float: left;
+}
+.app .app_1{
+    float: left;
+    width: 50%;
+    height: 300px;
+    background-color: #eeeced;
+    padding-left: 350px;
+}
+.app .app_1 ul li{
+    margin-top: 100px;
+    float: left;
+    margin-right: 60px;
+}
+.app .app_1 ul li span{
+    font-weight: bold;
+}
+.app .app_1 ul li a{
+    font-size: 30px;
+    margin-top: 15px;
+}
+.app .app_1 ul li p{
+    color: #848283;
+}
+.app .app_2{
+    width: 50%;
+    height: 300px;
+    background-color: #f7f5f6;
+    padding-left: 85px;
+    padding-top: 85px;
+}
+.app .app_2 h3{
+    font-size: 25px;
+    font-weight: normal;
+}
+.app .app_2 ul li{
+    float: left;
+    border: 1px solid #acaaab;
+    padding: 5px 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+.app .app_2 ul li a{color: #acaaab;}
+/* footer */
+footer .center_box {
+    width: 100%;
+    height: 200px;
+    background-color: #ffffff;
+}
+footer .center_box .footer_left{
+    width: 50%;
+    height: 200px;
+    padding-top: 60px;
+    padding-left: 70px;
+    float: left;
+}
+footer .center_box .footer_left .footer_left_up{
+    float: left;
+}
+footer .center_box .footer_left .footer_left_up > ul > li{
+    float: left;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-right: 30px;
+}
+footer .center_box .footer_left .footer_left_down{
+    font-size: 12px;
+    color: #7c7c7c;
+    float: left;
+    line-height: 25px;
+}
+footer .center_box .footer_right{
+    float: right;
+    padding-top: 60px;
+    padding-right: 70px;
+}
+footer .center_box .footer_right .footer_logo{
+    float: left;
+}
+footer .center_box .footer_right .footer_logo ul li{
+    float: left;
+    margin-right: 30px;
+}
+footer .center_box .footer_right .footer_logo ul li a span{
+    float: left;
+    margin-right: 5px;
+    display: block;
+}
+footer .center_box .footer_right .footer_logo ul li a span img{
+    width: 23px;
+    height: 22px;
+    object-fit: scale-down;
+}
+footer .center_box .footer_right .footer_logo ul li a p{
+    float: left;
+    font-size: 12px;
+}
+footer .center_box .footer_right .brend{
+    /* float: left; */
+    margin-right: 30px;
+    margin-top: 80px;
+    width: 200px;
+    position: relative;
+    left: 220px;
+}
+footer .center_box .footer_right .brend .br_title{
+    float: right;
+    border-bottom: 1px solid black;
+    /* padding: 5px 0; */
+    font-size: 13px;
+    position: absolute;
+}
+footer .center_box .footer_right .brend .br_title a{
+    float: left;
+    padding-bottom: 10px;
+}
+footer .center_box .footer_right .brend .br_title a span{
+    float: right;
+    padding-left: 70px;
+}
+footer .center_box .footer_right .brend .fa_con{
+    background-color: #111;
+    color: #fff;
+    float: left;
+    width: 100%;
+    position: absolute;
+    bottom: -30px;
+    display: none;
+}
+footer .center_box .footer_right .brend .fa_con ul{
+    padding: 15px 0;
+}
+footer .center_box .footer_right .brend .fa_con ul li{
+    float: left;
+}
+footer .center_box .footer_right .brend .fa_con ul li a{
+    padding: 5px 15px;
+    float: left;
+    font-size: 13px;
+    color: #fff;
+}
+footer .center_box .footer_right .brend .fa_con a{
+    float: right;
+    padding: 10px;
+}
+/* top버튼 */
+.top{
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    background-color: #f4f4f4;
+    text-align: center;
+    line-height: 80px;
+    font-size: 14px;
+    right: 0;
+    bottom: 0px;
+    cursor: pointer;
+    z-index: 2000;
+}
+.top.active{
+    bottom: 200px;
+    right: 0;
+}
+/* site */
+.site{
+    /* .wrap이랑 겹침 */
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    right: -100%;
+    top: 0;
+    
+}
+.site .site_menu{
+    width: 710px;
+    height: 100vh;
+    float: left;
+    background-color: #111;
+    position: relative;
+}
+.site .site_menu nav{
+    position: absolute;
+    z-index: 1002;
+    padding: 150px 0 0 70px;
+}
+.site .site_menu nav > ul > li{
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.site .site_menu nav > ul > li > a{
+    float: left;
+    font-size: 40px;
+    padding: 10px;
+    color: #aaa;
+    font-weight: bold;
+}
+.site .site_menu nav > ul > li > a.active{
+    color: #fff;
+}
+.site .site_menu nav ul > li > p{
+    width: 0;
+    height: 2px;
+    background-color: #ddd;
+    margin-top: 40px;
+    margin-left: 20px;
+    float: left;
+    transition: all 0.5s;
+}
+.site .site_menu nav > ul > li > p.line1.active{
+    width: 200px;
+}
+.site .site_menu nav > ul > li > p.line2.active{
+    width: 130px;
+}
+.site .site_menu nav > ul > li > p.line3.active{
+    width: 160px;
+}
+.site .site_menu nav > ul > li > p.line4.active{
+    width: 120px;
+}
+.site .site_menu nav > ul > li > .sub{
+   position: absolute;
+   top: 20px;
+   left: 380px;
+    display: none;
+}
+.site .site_menu nav > ul > li > .sub li a{
+    color: #ddd;
+    padding: 15px 10px;
+}
+.site .site_bg{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+}
+.site .site_bg ul li{
+    position: absolute;
+    /* display: none; */
+    transform: scale(1.1,1.1);
+    transition: all 1s;
+    opacity: 0;
+}
+.site .site_bg ul li.active{
+    transform: scale(1,1);
+    opacity: 1;
+}
+.site .site_bg ul li:first-child{
+    display: block;
+}
+.site .site_map{
+    /* width: calc(100%-710px); */
+    /* width: 1210px; */
+    height: 100vh;
+    padding: 80px 70px;
+    background-color: white;
+    float: left;
+}
+.site .site_map .site_close{
+    width: 22px;
+    height: 22px;
+    float: right;
+}
+.site .site_map .site_nav{
+    width: 100%;
+    float: left;
+    margin-top: 30px;
+}
+.site .site_map .site_nav > ul > li{
+    float: left;
+    margin: 40px;
+    width: 120px;
+    height: 180px;
+}
+.site .site_map .site_nav > ul > li > a{
+    font-size: 24px;
+}
+.site .site_map .site_nav > ul > li .sub li a{
+    font-size: 16px;
+    padding: 10px 0;
+    color: #777;
+}
+.site .site_map .site_banner{
+    width: 100%;
+    padding: 100px 50px;
+    float: left;
+}
+.site .site_map .site_banner ul li{
+    float: left;
+    margin-right: 20px;
+    width: 290px;
+    height: 180px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+.site .site_map .site_banner ul li:first-child{
+    background-image: url(../img/site_banner1.jpg);
+}
+.site .site_map .site_banner ul li:nth-child(2){
+    background-image: url(../img/site_banner2.jpg);
+}
+.site .site_map .site_banner ul li:last-child{
+    background-image: url(../img/site_banner3.jpg);
+}
+.site .site_map .site_banner ul li a{
+    font-weight: bold;
+}
